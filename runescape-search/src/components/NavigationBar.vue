@@ -1,9 +1,12 @@
 <template>
   <div>
     <v-toolbar dark prominent>
-      <v-toolbar-title
-        ><router-link to="/">RuneScape Search</router-link>
-      </v-toolbar-title>
+      <img
+        class="ml-3"
+        src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
+        height="40"
+      />
+      <v-toolbar-title> RuneScape Search </v-toolbar-title>
 
       <v-toolbar-items>
         <v-btn variant="tonal" :to="{ name: 'home' }">Home</v-btn>
@@ -16,6 +19,10 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<script></script>
+
+<style scoped>
+.logo img {
+  height: 50px;
+}
+</style>
