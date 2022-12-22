@@ -1,18 +1,18 @@
 <template>
   <v-app>
     <v-main>
-      <router-link to="/about">About</router-link>
+      <NavigationBar />
       <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
+import NavigationBar from "./components/NavigationBar.vue";
 export default {
   name: "App",
-
-  data: () => ({
-    //
-  }),
+  components: {
+    NavigationBar,
+  },
 };
 </script>
