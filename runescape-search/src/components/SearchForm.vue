@@ -13,27 +13,22 @@
           <v-btn type="submit"> Submit </v-btn>
         </v-col>
       </v-row>
+      <p>{{ data }}</p>
     </v-container>
   </v-form>
 </template>
 
 <script>
+import { fetchData } from "@/composables/fetchData";
+import { computed } from "vue";
 export default {
   setup() {
-    async function fetchData() {
-      const endpoint = `https://apps.runescape.com/runemetrics/profile/profile?user=Xai Caldrin&activities=20`;
-      const response = await fetch(endpoint);
-      if (!response.ok) {
-        // Handle error here
-        console.error(`Error: ${response.status}`);
-        return;
-      }
-      const data = await response.json();
-      console.log(data.magic);
-    }
+    const data = computed(() => {
+      fetchData();
+    });
 
     return {
-      fetchData,
+      data,
     };
   },
 };
